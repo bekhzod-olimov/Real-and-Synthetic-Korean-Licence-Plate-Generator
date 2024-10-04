@@ -12,15 +12,15 @@ if __name__ == '__main__':
     # get the number of images in the dataset.
     dataset_size = len(dataset)    
 
-    model = create_model(opt)      # create a model given opt.model and other options
+    # create a model given opt.model and other options
+    model = create_model(opt)      
     print('The number of training images = %d' % dataset_size)
-    # model.load_networks(18)
 
-    visualizer = Visualizer(opt)   # create a visualizer that display/save images and plots
+    # create a visualizer that display/save images and plots
+    visualizer = Visualizer(opt)   
     opt.visualizer = visualizer
-    total_iters = 0                # the total number of training iterations
-
-    optimize_time = 0.1
+    # the total number of training iterations
+    total_iters, optimize_time = 0, 0.1               
 
     times = []
     for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):    # outer loop for different epochs; we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>
