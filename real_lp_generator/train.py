@@ -1,8 +1,7 @@
-import time
-import torch
+# Import libraries
+import time, torch
 from options.train_options import TrainOptions
-from data import create_dataset
-from models import create_model
+from data import create_dataset; from models import create_model
 from util.visualizer import Visualizer
 
 if __name__ == '__main__':
