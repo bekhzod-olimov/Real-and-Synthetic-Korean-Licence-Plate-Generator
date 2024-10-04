@@ -5,9 +5,12 @@ from data import create_dataset; from models import create_model
 from util.visualizer import Visualizer
 
 if __name__ == '__main__':
-    opt = TrainOptions().parse()   # get training options
-    dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
-    dataset_size = len(dataset)    # get the number of images in the dataset.
+    # get training options
+    opt = TrainOptions().parse()   
+    # create a dataset given opt.dataset_mode and other options
+    dataset = create_dataset(opt)  
+    # get the number of images in the dataset.
+    dataset_size = len(dataset)    
 
     model = create_model(opt)      # create a model given opt.model and other options
     print('The number of training images = %d' % dataset_size)
