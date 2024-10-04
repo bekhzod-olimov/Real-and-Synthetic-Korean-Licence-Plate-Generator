@@ -24,11 +24,14 @@ if __name__ == '__main__':
 
     times = []
     for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):    # outer loop for different epochs; we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>
-        # print(model.netG)
-        epoch_start_time = time.time()  # timer for entire epoch
-        iter_data_time = time.time()    # timer for data loading per iteration
-        epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch
-        visualizer.reset()              # reset the visualizer: make sure it saves the results to HTML at least once every epoch
+        # timer for entire epoch
+        epoch_start_time = time.time()  
+        # timer for data loading per iteration
+        iter_data_time = time.time()    
+        # the number of training iterations in current epoch, reset to 0 every epoch
+        epoch_iter = 0                  
+        # reset the visualizer: make sure it saves the results to HTML at least once every epoch
+        visualizer.reset()              
 
         dataset.set_epoch(epoch)
         for i, data in enumerate(dataset):  # inner loop within one epoch
